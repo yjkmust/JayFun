@@ -52,12 +52,12 @@ public class AndroidFragment extends BaseFragment<FragmentAndroidBinding> {
         initRetrofit(mPage, new RequestInterfa() {
             @Override
             public void loadSuccess(Object object) {
-                Toast.makeText(getActivity(), "加载成功", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "加载成功", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void loadFailed() {
-                Toast.makeText(getActivity(), "加载失败", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "加载失败", Toast.LENGTH_SHORT).show();
 
             }
         });

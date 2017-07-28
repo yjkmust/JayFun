@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cocosw.bottomsheet.BottomSheet;
+import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
 
 
@@ -64,7 +65,7 @@ public class CustombysSelfFragment extends BaseFragment<FragmentCustomBinding> {
     private GankIoDataBean mAllBean;
     private ACache mAcache;
     private AndroidAdapter adapter;
-//    private Hea mHeaderBinding;
+    //    private Hea mHeaderBinding;
     private View mHeaderView;//recycleView的Header
     private int mPage = 1;
     private GankOtherModel mModel;
@@ -73,6 +74,7 @@ public class CustombysSelfFragment extends BaseFragment<FragmentCustomBinding> {
     private static String Tag = "Test";
     private ArrayList<String> mBannerImages;
     private HeaderItemGankCustomBinding mHeaderBinding;
+    private String TAG = "CustombysSelfFragment";
 
     @Override
     public int setContent() {
@@ -86,15 +88,16 @@ public class CustombysSelfFragment extends BaseFragment<FragmentCustomBinding> {
         mIsPrepared = true;//准备就绪
         mModel = new GankOtherModel();
         mHeaderBinding = DataBindingUtil.inflate(LayoutInflater.from(getContext()), R.layout.header_item_gank_custom, null, false);
-
+        initBanner();
         bindingView.xrvCustom.setPullRefreshEnabled(false);//禁止下拉刷新
         bindingView.xrvCustom.setLoadingMoreEnabled(true);
         adapter = new AndroidAdapter();
-        bindingView.xrvCustom.setLoadingListener(new com.example.xrecyclerview.XRecyclerView.LoadingListener(){
+        bindingView.xrvCustom.setLoadingListener(new com.example.xrecyclerview.XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
 
             }
+
             @Override
             public void onLoadMore() {
                 mPage++;
@@ -103,6 +106,7 @@ public class CustombysSelfFragment extends BaseFragment<FragmentCustomBinding> {
             }
         });
         loadData();
+        initBanner();
     }
 
     @Override
@@ -121,11 +125,30 @@ public class CustombysSelfFragment extends BaseFragment<FragmentCustomBinding> {
             initAdapter(mAllBean);
         } else {
             loadCustomData();
-            loadBannerData();
+//            loadBannerData();
         }
 
     }
-    private void loadBannerData(){
+
+    @Override
+    protected void onInVisible() {
+        super.onInVisible();
+        // 不可见时轮播图停止滚动
+        if (mHeaderBinding != null && mHeaderBinding.banner != null) {
+            mHeaderBinding.banner.stopAutoPlay();
+        }
+    }
+
+    private void initBanner(){
+        mBannerImages = new ArrayList<>();
+        mBannerImages.add("http://img.article.pchome.net/01/75/83/04/lollipop.jpg");
+        mBannerImages.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501214418907&di=7ccbf9710ef8a4f423ea79ce317c261f&imgtype=0&src=http%3A%2F%2Fupload.techweb.com.cn%2F2017%2F0622%2F1498111301668.jpg");
+        mBannerImages.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501214511032&di=1aa577aa72ed432c9aecf6c5e22f5972&imgtype=0&src=http%3A%2F%2Fwww.onlinecq.com%2Fuploads%2Fallimg%2F170704%2F1546153321_0.jpeg");
+        mBannerImages.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501214830277&di=8b3caa6ca1a678c9062618fce8d29e97&imgtype=0&src=http%3A%2F%2Fwww.baizhi360.com%2Fuploads%2Farticle%2F20151106%2F2774d77f36db643dc3e7f6fce74c5023.jpg");
+        mBannerImages.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501214915370&di=25ca02cf0dce661fe9ffc20e3e0c49b7&imgtype=0&src=http%3A%2F%2Fimg.leikeji.com%2Fresource%2Fimg%2F2efc3f3372574212838cbc818f4e7251.jpg");
+    }
+
+    private void loadBannerData() {
         HttpClient.Builder.getTingServer().getFrontpage()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -297,6 +320,8 @@ public class CustombysSelfFragment extends BaseFragment<FragmentCustomBinding> {
     private void initAdapter(GankIoDataBean mCustomBean) {
         if (mHeaderView == null) {
             mHeaderView = View.inflate(getContext(), R.layout.header_item_gank_custom, null);
+            Banner banner = (Banner) mHeaderView.findViewById(R.id.banner);
+            banner.setImages(mBannerImages).setImageLoader(new GlideImageLoader()).start();
             bindingView.xrvCustom.addHeaderView(mHeaderView);
         }
         initHeader(mHeaderView);

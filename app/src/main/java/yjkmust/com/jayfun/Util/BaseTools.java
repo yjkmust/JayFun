@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Locale;
 
 import yjkmust.com.jayfun.App.CloudReaderApplication;
+import yjkmust.com.jayfun.App.MyApplication;
 
 /**
  * Created by jingbin on 2017/2/13.
@@ -149,7 +150,7 @@ public class BaseTools {
      */
     public static void copy(String content) {
         // 得到剪贴板管理器
-        ClipboardManager cmb = (ClipboardManager) CloudReaderApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipboardManager cmb = (ClipboardManager) MyApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
         cmb.setText(content.trim());
     }
 

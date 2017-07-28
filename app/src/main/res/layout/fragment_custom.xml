@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <FrameLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.example.xrecyclerview.XRecyclerView
-            android:id="@+id/xrv_custom"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbarSize="4dp"
-            android:scrollbarThumbVertical="@color/tabBackground"
-            android:scrollbars="vertical">
-        </com.example.xrecyclerview.XRecyclerView>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            <com.example.xrecyclerview.XRecyclerView
+                android:id="@+id/xrv_custom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarSize="4dp"
+                android:scrollbarThumbVertical="@color/tabBackground"
+                android:scrollbars="vertical">
+            </com.example.xrecyclerview.XRecyclerView>
+    </LinearLayout>
 
-    </FrameLayout>
+
 </layout>

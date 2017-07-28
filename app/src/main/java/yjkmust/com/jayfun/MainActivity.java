@@ -1,5 +1,6 @@
 package yjkmust.com.jayfun;
 
+import android.app.ActivityManager;
 import android.databinding.DataBindingUtil;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -9,6 +10,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NavHeaderMainBinding bind;
     private ViewPager vpContent;
     private DrawerLayout drawerLayout;
+    private String TAG ="MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +130,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         case R.id.ll_nav_login:// 登录GitHub账号
                             WebViewActivity.loadUrl(v.getContext(), "https://github.com/login", "登录GitHub账号");
                             break;
+                        case R.id.ll_nav_exit:
+                            Log.d(TAG, "finish: ");
+                            ActivityManager manager = (ActivityManager) MainActivity.this.getSystemService(ACTIVITY_SERVICE); //获取应用程序管理器
+                            manager.killBackgroundProcesses(getPackageName()); //强制结束当前应用程序
                     }
                 }
             }, 260);

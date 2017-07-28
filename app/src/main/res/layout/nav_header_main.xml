@@ -21,7 +21,7 @@
                 android:id="@+id/ll_header_bg"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/nav_header_height"
-                android:background="@drawable/ic_nav_bg_drawerlayout"
+                android:background="@mipmap/london_image"
                 android:gravity="bottom"
                 android:orientation="vertical"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark">
@@ -123,7 +123,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:text="扫码下载"
+                    android:text="关注分享"
                     android:textColor="@color/colorContent"
                     android:textSize="15sp" />
 
@@ -149,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:text="问题反馈"
+                    android:text="讨论社区"
                     android:textColor="@color/colorContent"
                     android:textSize="15sp" />
 
