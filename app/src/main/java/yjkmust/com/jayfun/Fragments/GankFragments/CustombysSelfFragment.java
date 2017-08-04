@@ -321,6 +321,7 @@ public class CustombysSelfFragment extends BaseFragment<FragmentCustomBinding> {
         if (mHeaderView == null) {
             mHeaderView = View.inflate(getContext(), R.layout.header_item_gank_custom, null);
             Banner banner = (Banner) mHeaderView.findViewById(R.id.banner);
+            banner.setDelayTime(5000);
             banner.setImages(mBannerImages).setImageLoader(new GlideImageLoader()).start();
             bindingView.xrvCustom.addHeaderView(mHeaderView);
         }
