@@ -3,17 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JayFun.iml" filepath="$PROJECT_DIR$/JayFun.iml" />
-      <module fileurl="file://E:\GitHub\JayFun\JayFun.iml" filepath="E:\GitHub\JayFun\JayFun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnePiece/OnePiece.iml" filepath="$PROJECT_DIR$/OnePiece/OnePiece.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://E:\GitHub\JayFun\app\app.iml" filepath="E:\GitHub\JayFun\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/http/http.iml" filepath="$PROJECT_DIR$/http/http.iml" />
-      <module fileurl="file://E:\GitHub\JayFun\http\http.iml" filepath="E:\GitHub\JayFun\http\http.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://E:\GitHub\JayFun\library\library.iml" filepath="E:\GitHub\JayFun\library\library.iml" />
       <module fileurl="file://$PROJECT_DIR$/xrecyclerview/xrecyclerview.iml" filepath="$PROJECT_DIR$/xrecyclerview/xrecyclerview.iml" />
-      <module fileurl="file://E:\GitHub\JayFun\xrecyclerview\xrecyclerview.iml" filepath="E:\GitHub\JayFun\xrecyclerview\xrecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/zoomlibrary/zoomlibrary.iml" filepath="$PROJECT_DIR$/zoomlibrary/zoomlibrary.iml" />
-      <module fileurl="file://E:\GitHub\JayFun\zoomlibrary\zoomlibrary.iml" filepath="E:\GitHub\JayFun\zoomlibrary\zoomlibrary.iml" />
     </modules>
   </component>
 </project>

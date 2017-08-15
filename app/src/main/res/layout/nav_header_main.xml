@@ -112,7 +112,8 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp">
+                android:paddingRight="16dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="20dp"
@@ -149,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:text="讨论社区"
+                    android:text="稀土掘金"
                     android:textColor="@color/colorContent"
                     android:textSize="15sp" />
 
@@ -161,6 +162,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/ripple_one_item_bg"
                 android:clickable="true"
+                android:visibility="gone"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
@@ -212,44 +214,6 @@
                     android:textSize="15sp" />
 
             </LinearLayout>
-
-
-            <!--&lt;!&ndash;夜间模式，正在完善&ndash;&gt;-->
-            <!--<LinearLayout-->
-                <!--android:visibility="gone"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="48dp"-->
-                <!--android:background="@drawable/ripple_one_item_bg"-->
-                <!--android:clickable="true"-->
-                <!--android:gravity="center_vertical"-->
-                <!--android:onClick="@{listener.onNightModeClick}"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
-                <!--android:paddingRight="@dimen/activity_horizontal_margin">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="30dp"-->
-                    <!--android:layout_height="30dp"-->
-                    <!--android:src="@drawable/ic_nav_night" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="0dp"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginLeft="8dp"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:text="夜间模式"-->
-                    <!--android:textColor="@color/colorContent"-->
-                    <!--android:textSize="15sp" />-->
-
-                <!--<android.support.v7.widget.SwitchCompat-->
-                    <!--android:id="@+id/day_night_switch"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:checked="@{listener.getNightMode}"-->
-                    <!--android:clickable="false" />-->
-            <!--</LinearLayout>-->
-
-
             <LinearLayout
                 android:id="@+id/ll_nav_exit"
                 android:layout_width="match_parent"

@@ -1,6 +1,8 @@
 package yjkmust.com.jayfun;
 
 import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bind.llNavDeedback.setOnClickListener(listener);
         bind.llNavAbout.setOnClickListener(listener);
         bind.llNavLogin.setOnClickListener(listener);
+        bind.llNavExit.setOnClickListener(listener);
 
     }
 
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ivTitleGank.setOnClickListener(this);
         ivTitleOne.setOnClickListener(this);
         ivTitleDou.setOnClickListener(this);
+
     }
 
     private void initView() {
@@ -119,21 +123,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             NavHomePagerActivity.startHome(MainActivity.this);
                             break;
                         case R.id.ll_nav_scan_download://扫码下载
-//                            NavDownloadActivity.start(MainActivity.this);
+//
                             break;
-                        case R.id.ll_nav_deedback:// 问题反馈
-//                            NavDeedBackActivity.start(MainActivity.this);
+                        case R.id.ll_nav_deedback:// 掘金社区
+                             WebViewActivity.loadUrl(v.getContext(), "https://juejin.im/timeline", "掘金社区");
                             break;
-                        case R.id.ll_nav_about:// 关于云阅
-//                            NavAboutActivity.start(MainActivity.this);
+                        case R.id.ll_nav_about:// 关于JayFun
+//
                             break;
                         case R.id.ll_nav_login:// 登录GitHub账号
                             WebViewActivity.loadUrl(v.getContext(), "https://github.com/login", "登录GitHub账号");
                             break;
                         case R.id.ll_nav_exit:
-                            Log.d(TAG, "finish: ");
-                            ActivityManager manager = (ActivityManager) MainActivity.this.getSystemService(ACTIVITY_SERVICE); //获取应用程序管理器
-                            manager.killBackgroundProcesses(getPackageName()); //强制结束当前应用程序
+                           ExitApp();
+                           break;
                     }
                 }
             }, 260);
@@ -230,6 +233,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    private void ExitApp(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("提示");
+        builder.setMessage("确认退出吗？");
+        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MainActivity.this.finish();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
     }
 
 }
