@@ -8,12 +8,9 @@ import android.support.v4.app.Fragment;
 import java.util.ArrayList;
 
 import yjkmust.com.jayfun.FragmentPagerAdapter.MyFragmentPagerAdapter;
-import yjkmust.com.jayfun.Fragments.DouFragments.BookCustomFragment;
-import yjkmust.com.jayfun.Fragments.DouFragments.BookCustomOtherFragment;
 import yjkmust.com.jayfun.Fragments.GankFragments.AndroidFragment;
-import yjkmust.com.jayfun.Fragments.GankFragments.CustomFragment;
 import yjkmust.com.jayfun.Fragments.GankFragments.CustombysSelfFragment;
-import yjkmust.com.jayfun.Fragments.GankFragments.EveryDayFragment;
+import yjkmust.com.jayfun.Fragments.GankFragments.ForeEndFragment;
 import yjkmust.com.jayfun.Fragments.GankFragments.WelFareFragment;
 import yjkmust.com.jayfun.R;
 import yjkmust.com.jayfun.databinding.FragmentGankBinding;
@@ -59,12 +56,12 @@ public class GankFragment extends BaseFragment<FragmentGankBinding> {
     private void initFragmentList() {
         mTitleList.add("新闻");
         mTitleList.add("安卓");
-        mTitleList.add("福利");
-        mTitleList.add("书籍");
+        mTitleList.add("前端");
+        mTitleList.add("图片");
         mFragmnts.add(new CustombysSelfFragment());
         mFragmnts.add(new AndroidFragment());
+        mFragmnts.add(new ForeEndFragment());
         mFragmnts.add(new WelFareFragment());
-        mFragmnts.add(new BookCustomOtherFragment());
 
     }
 

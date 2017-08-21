@@ -47,5 +47,6 @@ dependencies {
     implementation project(':library')
     compile project(':OnePiece')
     compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
 
 }

@@ -32,6 +32,10 @@
             android:name=".WebViewActivity"
             android:label="@string/title_activity_web_view"
             android:theme="@style/otherPageStyle" />
+        <activity
+            android:name=".WebViewsActivity"
+            android:label="@string/title_activity_web_view"
+            android:theme="@style/otherPageStyle" />
         <activity android:name=".ViewBigImageActivity" />
         <activity android:name=".NavHomePagerActivity" />
         <activity

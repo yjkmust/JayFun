@@ -17,7 +17,7 @@
     <string name="actionbar_webview_open">打开链接</string>
     <string name="actionbar_share">分享给朋友\(^o^)/~</string>
     <string name="github_issues">您好，很希望得到您的意见，由于没有线上反馈系统，您可以在GitHub的Issues处说明问题原因，也可以通过以下方式联系我，我将根据情况尽量处理哦 ~</string>
-    <string name="string_about">大部分数据使用的是代码家的https://gank.io和豆瓣APIV2.0，一切数据解释权都归代码家和豆瓣所有。
+    <string name="string_about">API接口使用的是gank和知乎日报V3.0，一切数据解释权都归Gank和知乎所有。
         </string>
 
     <string name="string_about_me">
@@ -38,9 +38,8 @@
         \n com.youth.banner:banner:1.4.2
         \n com.daimajia.slider:library:1.1.5@aar
         \n com.cocosw:bottomsheet:1.+@aar
-        \n com.google.zxing:core:3.2.1
-        \n skin.support:skin-support:1.0.1
-        \n skin.support:skin-support-design:0.0.2
+        \n com.google.zxing:core:3.2
+        \n com.github.ybq:Android-SpinKit:1.1.0
     </string>
 
     <string name="string_everyday_empty">暂时没有更新内容，去看看其他信息吧~</string>
